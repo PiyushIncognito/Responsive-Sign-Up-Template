@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;600;700&family=Oswald:wght@200;300;400;500;600&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
 body{
@@ -11,6 +12,8 @@ body{
     justify-content: center;
     min-height: 100vh;
     background: #444;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+
 }
 .container{
     position: relative;
@@ -54,6 +57,8 @@ form{
     width: 40%;
     min-width: 238px;
     padding: 0 10px;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+
 }
 
 form.sign-in-form{
@@ -99,6 +104,7 @@ form.sign-up-form{
     font-size: 10px;
     font-weight: 600;
     color: #444;
+    font-family: 'Baloo Bhaijaan 2', cursive;
 }
 .btn{
     width: 150px;
@@ -163,7 +169,9 @@ a{
     z-index: 6;
 }
 
-
+.left-panel{
+    pointer-events: none;
+}
 
 .content{
     color: #fff;
@@ -197,6 +205,10 @@ a{
     transform: translateX(0);
 }
 
+.account-text{
+    display: none;
+}
+
 .container.sign-up-mode::before{
     transform: translateX(0);
 }
@@ -215,7 +227,7 @@ a{
     opacity: 0;
 }
 
-.container.sign-up-mode form.sign-in-form{
+.container.sign-up-mode form.sign-up-form{
     opacity: 1;
     
 }
@@ -225,4 +237,44 @@ a{
 }
 .container.sign-up-mode .left-panel{
     pointer-events: all;
+}
+
+/*Responsive*/
+
+@media (max-width:779px){
+    .container{
+        width: 100vw;
+        height: 100vh;
+    }
+}
+@media (max-width:635px){
+    .container::before{
+        display: none;
+    }
+    form{
+        width: 80%;
+    }
+    form.sign-up-form{
+        display: none;
+    }
+    .container.sign-up-mode2 form.sign-up-form{
+        display: flex;
+        opacity: 1;
+    }
+    .container.sign-up-mode2 form.sign-in-form{
+        display: none;
+    }
+    
+    .panel-container{
+        display: none;
+    }
+    .account-text{
+        display: initial;
+        margin-top: 30px;
+    }
+}
+@media (max-width:320px){
+    form{
+        width: 90%;
+    }
 }
